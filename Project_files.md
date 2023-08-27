@@ -36,10 +36,10 @@ Launch Screens appear when when your app starts up and give user the impression 
 
 Xcode supplies an information property list file when you create a project from a template, as described in "create a project." By default, Xcode names this file Info.plist and adds it to your project as a source file that you can edit.
 
-#module-nameTests/
+# module-nameTests/
 
 This folder is responsible for managing code required to test functions within the application.
 
-#module-nameUITests/
+# module-nameUITests/
 
 This folder keeps the test files required for testing user interactions with app user interface.
