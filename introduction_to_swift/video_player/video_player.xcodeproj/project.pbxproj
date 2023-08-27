@@ -16,6 +16,8 @@
 		669344182A9BB3A90056D447 /* video_playerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669344172A9BB3A90056D447 /* video_playerTests.swift */; };
 		669344222A9BB3A90056D447 /* video_playerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669344212A9BB3A90056D447 /* video_playerUITests.swift */; };
 		669344242A9BB3A90056D447 /* video_playerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669344232A9BB3A90056D447 /* video_playerUITestsLaunchTests.swift */; };
+		669344312A9BB8990056D447 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669344302A9BB8990056D447 /* main.storyboard */; };
+		669344332A9BBC490056D447 /* Matchacha.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 669344322A9BBC490056D447 /* Matchacha.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		6693441D2A9BB3A90056D447 /* video_playerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = video_playerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		669344212A9BB3A90056D447 /* video_playerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = video_playerUITests.swift; sourceTree = "<group>"; };
 		669344232A9BB3A90056D447 /* video_playerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = video_playerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		669344302A9BB8990056D447 /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
+		669344322A9BBC490056D447 /* Matchacha.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Matchacha.mp4; path = ../../../../../Downloads/Matchacha.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				669344092A9BB3A90056D447 /* Assets.xcassets */,
 				6693440B2A9BB3A90056D447 /* LaunchScreen.storyboard */,
 				6693440E2A9BB3A90056D447 /* Info.plist */,
+				669344322A9BBC490056D447 /* Matchacha.mp4 */,
+				669344302A9BB8990056D447 /* main.storyboard */,
 			);
 			path = video_player;
 			sourceTree = "<group>";
@@ -231,9 +237,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669344332A9BBC490056D447 /* Matchacha.mp4 in Resources */,
 				6693440D2A9BB3A90056D447 /* LaunchScreen.storyboard in Resources */,
 				6693440A2A9BB3A90056D447 /* Assets.xcassets in Resources */,
 				669344082A9BB3A80056D447 /* Main.storyboard in Resources */,
+				669344312A9BB8990056D447 /* main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
