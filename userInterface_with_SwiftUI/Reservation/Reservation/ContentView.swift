@@ -17,6 +17,7 @@ struct ContentView: View {
             Text("Reservation")
             Stepper {
                 Text("Reservation for: \(personCount)")
+                
             } onIncrement: {
                 personCount += 1
             } onDecrement: {
