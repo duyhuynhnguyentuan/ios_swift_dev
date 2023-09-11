@@ -1,8 +1,8 @@
 # **Observable, Observed, State and Binding**
 
-In this reading, you will be introduced to the SwiftUI elements: **ObservableObject** , **ObservedObject** , **State** and **Binding**. These are elements that work together to create variables that communicate through classes and views.
+> In this reading, you will be introduced to the SwiftUI elements: **ObservableObject** , **ObservedObject** , **State** and **Binding**. These are elements that work together to create variables that communicate through classes and views.
 
-**What are these elements? **
+## **What are these elements?**
 
 **ObservableObject** , **ObservedObject** , **State** and **Binding** are known as property wrappers and are used with interface elements to control data display.
 
@@ -16,7 +16,7 @@ All SwiftUI views are structures, also known as structs. Once initialized, struc
 
 **@Binding** , on the other hand, is used to create variables that receive values from **@State** variables and are connected to them in a way that any change to a **@Binding** variable will change the bind **@State** variable.
 
-**What do they look like in practice? **
+## **What do they look like in practice?**
 
 **@State** and **@Binding** are used when you need to pass a variable to another view.
 
