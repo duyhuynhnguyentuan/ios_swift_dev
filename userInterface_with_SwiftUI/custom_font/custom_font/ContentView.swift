@@ -8,28 +8,93 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ScaledMetric(relativeTo: .body) var scaledPadding: CGFloat = 1
+    @ScaledMetric(relativeTo: .body) var scaledPadding: CGFloat = 0
+    @State var inputName = ""
+    @State var isViet = false
+    @State private var value = 1
+    @State private var size = 0.1
+    //or can you DateComponent() to create new day instance
+    @State var selectedDate = Date()
+    //computed property is below var because it is calculated based on the provided logic when it is accessed
+    var dateClosedRange: ClosedRange<Date>{
+        let min = Calendar.current.date(byAdding: .day,value: -1, to: Date())! //unwrap optional
+        let max = Calendar.current.date(byAdding: .day,value: 1, to: Date())!
+        return min...max
+    }
+    @State var reservationDay = Date()
     var body: some View {
         VStack {
-        
-            Text("Study with me").font(Font.custom("Vividlyviethoa Regular", size: 50, relativeTo: .title))
-                .foregroundColor(.orange)
-        
-            HStack{
-                Button("one"){
-                    
-                }.foregroundColor(Color.indigo)
-                Button("two"){
-                    
-                }.foregroundColor(Color.indigo)
-                Button("three"){
-                    
-                }.foregroundColor(Color.indigo)
-            }.font(Font.custom("Vividlyviethoa Regular", size: 25)).padding(scaledPadding)
             
+            Text("Study with me")
+                .font(Font.custom("Vividlyviethoa Regular", size: 50, relativeTo: .title))
+                .foregroundColor(.orange)
+            
+            HStack{
+                Button("duy"){}.foregroundColor(Color.indigo)
+                Button("huynh"){}.foregroundColor(Color.indigo)
+                Button("nguyen tuan"){}.foregroundColor(Color.indigo)
+            }
+            .font(Font.custom("Vividlyviethoa Regular", size: 25))
+            .padding(scaledPadding)
+            
+            Form{
+                Label("Name", systemImage: "pencil.line")
+                    .labelStyle(.titleAndIcon)
+                
+                TextField("Enter your name here", text: $inputName,onEditingChanged: {
+                    status in
+                    print("Is user entering name: \(status)")
+                })
+                
+                Button(action: {
+                    inputName = ""
+                    print("User just clear name!")
+                }) {
+                    HStack {
+                        Image(systemName: "trash")
+                        Text("Clear name")
+                    }
+                }
+                Toggle("Are you Viet?", isOn: $isViet)
+                    .onChange(of: isViet){ newValue in
+                    print(newValue)
+                }
+                Stepper("Number of tasks: \(value)",value: $value, in: 1...10 )
+                VStack{
+                    Text("Change size of the word")
+                    Text("Study with me").font(Font.custom("Vividlyviethoa Regular", size: size*100))
+                    Slider(value: $size)
+                    
+                }
+                
+                Section{
+                    DatePicker(
+                        selection: $selectedDate,
+                        in: dateClosedRange,
+                        displayedComponents: .date,
+                        label: {Text("Due day")}
+                    )
+                    HStack{
+                        DatePicker(selection: $reservationDay,
+                                   in: Date()...,
+                                   displayedComponents: [.date, .hourAndMinute]
+                        ){}
+                        Button(action: {print("Done setting reservation day")}){
+                            HStack{
+                                Image(systemName: "arrow.right.circle")
+                                Text("Done")
+                            }.padding(20)
+                        }
+                    }
+                    Text("Reservation day is \(reservationDay.formatted(date: .abbreviated, time: .shortened))")
+                }
+            }
         }
+        
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
