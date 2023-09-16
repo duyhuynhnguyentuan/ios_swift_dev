@@ -23,74 +23,81 @@ struct ContentView: View {
     }
     @State var reservationDay = Date()
     var body: some View {
-        VStack {
-            
-            Text("Study with me")
-                .font(Font.custom("Vividlyviethoa Regular", size: 50, relativeTo: .title))
-                .foregroundColor(.orange)
-            
-            HStack{
-                Button("duy"){}.foregroundColor(Color.indigo)
-                Button("huynh"){}.foregroundColor(Color.indigo)
-                Button("nguyen tuan"){}.foregroundColor(Color.indigo)
-            }
-            .font(Font.custom("Vividlyviethoa Regular", size: 25))
-            .padding(scaledPadding)
-            
-            Form{
-                Label("Name", systemImage: "pencil.line")
-                    .labelStyle(.titleAndIcon)
-                
-                TextField("Enter your name here", text: $inputName,onEditingChanged: {
-                    status in
-                    print("Is user entering name: \(status)")
-                })
-                
-                Button(action: {
-                    inputName = ""
-                    print("User just clear name!")
-                }) {
-                    HStack {
-                        Image(systemName: "trash")
-                        Text("Clear name")
-                    }
+        TabView{
+            SecondView().tabItem({Label("Home", systemImage: "house")})
+            VStack {
+                //            NavigationView{
+                //                NavigationLink(destination: SecondView()){
+                //
+                //                    Text("Study with me")
+                //                        .font(Font.custom("Vividlyviethoa Regular", size: 50, relativeTo: .title))
+                //                        .foregroundColor(.orange)
+                //
+                //                }
+                //            }
+                //
+                HStack{
+                    Button("duy"){}.foregroundColor(Color.indigo)
+                    Button("huynh"){}.foregroundColor(Color.indigo)
+                    Button("nguyen tuan"){}.foregroundColor(Color.indigo)
                 }
-                Toggle("Are you Viet?", isOn: $isViet)
-                    .onChange(of: isViet){ newValue in
-                    print(newValue)
-                }
-                Stepper("Number of tasks: \(value)",value: $value, in: 1...10 )
-                VStack{
-                    Text("Change size of the word")
-                    Text("Study with me").font(Font.custom("Vividlyviethoa Regular", size: size*100))
-                    Slider(value: $size)
+                .font(Font.custom("Vividlyviethoa Regular", size: 25))
+                .padding(scaledPadding)
+                
+                Form{
+                    Label("Name", systemImage: "pencil.line")
+                        .labelStyle(.titleAndIcon)
                     
-                }
-                
-                Section{
-                    DatePicker(
-                        selection: $selectedDate,
-                        in: dateClosedRange,
-                        displayedComponents: .date,
-                        label: {Text("Due day")}
-                    )
-                    HStack{
-                        DatePicker(selection: $reservationDay,
-                                   in: Date()...,
-                                   displayedComponents: [.date, .hourAndMinute]
-                        ){}
-                        Button(action: {print("Done setting reservation day")}){
-                            HStack{
-                                Image(systemName: "arrow.right.circle")
-                                Text("Done")
-                            }.padding(20)
+                    TextField("Enter your name here", text: $inputName,onEditingChanged: {
+                        status in
+                        print("Is user entering name: \(status)")
+                    })
+                    
+                    Button(action: {
+                        inputName = ""
+                        print("User just clear name!")
+                    }) {
+                        HStack {
+                            Image(systemName: "trash")
+                            Text("Clear name")
                         }
                     }
-                    Text("Reservation day is \(reservationDay.formatted(date: .abbreviated, time: .shortened))")
+                    Toggle("Are you Viet?", isOn: $isViet)
+                        .onChange(of: isViet){ newValue in
+                            print(newValue)
+                        }
+                    Stepper("Number of tasks: \(value)",value: $value, in: 1...10 )
+                    VStack{
+                        Text("Change size of the word")
+                        Text("Study with me").font(Font.custom("Vividlyviethoa Regular", size: size*100))
+                        Slider(value: $size)
+                        
+                    }
+                    
+                    Section{
+                        DatePicker(
+                            selection: $selectedDate,
+                            in: dateClosedRange,
+                            displayedComponents: .date,
+                            label: {Text("Due day")}
+                        )
+                        HStack{
+                            DatePicker(selection: $reservationDay,
+                                       in: Date()...,
+                                       displayedComponents: [.date, .hourAndMinute]
+                            ){}
+                            Button(action: {print("Done setting reservation day")}){
+                                HStack{
+                                    Image(systemName: "arrow.right.circle")
+                                    Text("Done")
+                                }.padding(20)
+                            }
+                        }
+                        Text("Reservation day is \(reservationDay.formatted(date: .abbreviated, time: .shortened))")
+                    }
                 }
-            }
+            }.tabItem({Label("Register", systemImage: "square.and.pencil")})
         }
-        
     }
 }
 
