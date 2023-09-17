@@ -24,6 +24,11 @@ struct ContentView: View {
     @State var reservationDay = Date()
     var body: some View {
         TabView{
+            VStack{
+                Image("92076DFB-53A5-4D2A-AEF5-9AE1E0F91813_1_105_c")
+                Text("Study with dudu").font(Font.custom("Vividlyviethoa", size: 35)).foregroundColor(Color.green)
+            }
+                .tabItem({Label("Dudu", systemImage: "figure.and.child.holdinghands")})
             SecondView().tabItem({Label("Home", systemImage: "house")})
             VStack {
                 //            NavigationView{
@@ -95,7 +100,7 @@ struct ContentView: View {
                         }
                         Text("Reservation day is \(reservationDay.formatted(date: .abbreviated, time: .shortened))")
                     }
-                }
+                }.scrollContentBackground(.hidden)
             }.tabItem({Label("Register", systemImage: "square.and.pencil")})
         }
     }

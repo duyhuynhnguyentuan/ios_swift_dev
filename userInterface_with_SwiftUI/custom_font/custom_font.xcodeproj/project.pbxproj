@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6656D8EA2AB6064C0092FE07 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6656D8E92AB6064C0092FE07 /* SecondView.swift */; };
+		6680FEA82AB71F56009508B9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6680FEA72AB71F56009508B9 /* DetailView.swift */; };
 		6689A22C2AB2F30D006FC450 /* custom_fontApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689A22B2AB2F30D006FC450 /* custom_fontApp.swift */; };
 		6689A22E2AB2F30D006FC450 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689A22D2AB2F30D006FC450 /* ContentView.swift */; };
 		6689A2302AB2F30E006FC450 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6689A22F2AB2F30E006FC450 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		6656D8E92AB6064C0092FE07 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		6680FEA72AB71F56009508B9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		6689A2282AB2F30D006FC450 /* custom_font.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = custom_font.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6689A22B2AB2F30D006FC450 /* custom_fontApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom_fontApp.swift; sourceTree = "<group>"; };
 		6689A22D2AB2F30D006FC450 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				6656D8E92AB6064C0092FE07 /* SecondView.swift */,
 				6689A22F2AB2F30E006FC450 /* Assets.xcassets */,
 				6689A2312AB2F30E006FC450 /* Preview Content */,
+				6680FEA72AB71F56009508B9 /* DetailView.swift */,
 			);
 			path = custom_font;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6656D8EA2AB6064C0092FE07 /* SecondView.swift in Sources */,
+				6680FEA82AB71F56009508B9 /* DetailView.swift in Sources */,
 				6689A22E2AB2F30D006FC450 /* ContentView.swift in Sources */,
 				6689A22C2AB2F30D006FC450 /* custom_fontApp.swift in Sources */,
 			);

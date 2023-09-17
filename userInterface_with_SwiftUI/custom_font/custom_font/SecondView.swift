@@ -8,10 +8,23 @@
 import SwiftUI
 
 struct SecondView: View {
+    let elements = ["Reservation", "Contacts", "Restaurant Locations"]
     var body: some View {
-        Text("Study with me")
-        .font(Font.custom("Vividlyviethoa Regular", size: 50, relativeTo: .title))
-        .foregroundColor(.orange)
+        List{
+            Section(header: Text("Important Information")){
+                Text("This list shows information about our restaurant page").font(.headline).multilineTextAlignment(.center)
+            }
+            ForEach(elements, id: \.self){ element in
+                NavigationLink(destination: DetailView()){
+                    Text(element)
+                }
+            }
+            Section(footer: Text("For more information")){
+                Text("Contact dudu at (0835488888)")
+            }
+        }.scrollContentBackground(.hidden)
+            .padding()
+            .listStyle(.automatic)
     }
 }
 
